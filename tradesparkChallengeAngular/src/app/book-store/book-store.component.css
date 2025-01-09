@@ -16,11 +16,46 @@ h1 {
     margin-bottom: 1em;
 }
 
+.filter-section {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 12px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.search-icon {
+  font-size: 1rem;
+  color: #000000;
+  margin-right: 12px;
+}
+
+.filter-section input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
+
+}
+
+.filter-section input::placeholder {
+  color: #999;
+}
+
+
+
 .book-list {
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent white for legibility */
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 100%;
+
 }
 
 .book-list table {

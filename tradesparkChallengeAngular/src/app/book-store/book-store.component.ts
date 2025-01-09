@@ -9,13 +9,13 @@ import { BookStoreService } from '../book-store.service';
 export class BookStoreComponent implements OnInit {
 
   books: any[] = [];
+  filteredBooks: any[] = [];
+  filterQuery: string = '';
 
   constructor(private bookStoreService: BookStoreService) { }
 
   ngOnInit(): void {
-    this.bookStoreService.getBooks().subscribe((data: any[]) => {
-      this.books = data; 
-    })
+    this.getBooks();
   }
 
   categoriesToString(categories: any[]): string {
@@ -23,11 +23,29 @@ export class BookStoreComponent implements OnInit {
     categories.forEach((category, index) => {
       categoriesString += category.name;
       if (index < categories.length - 1) {
-        categoriesString += ", ";
+        categoriesString += ', ';
       }
     });
     return categoriesString;
   }
 
+ applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
+    this.filteredBooks = this.books.filter(book =>
+      book.title.toLowerCase().includes(filterValue) ||
+      book.author.name.toLowerCase().includes(filterValue) ||
+      book.categories.some((category: any) =>
+        category.name.toLowerCase().includes(filterValue)
+      )
+    );
+  }
+
+  getBooks() {
+    this.bookStoreService.getBooks().subscribe((data: any[]) => {
+      console.log('Books Data:', data);
+      this.books = data;
+      this.filteredBooks = data;
+    });
+  }
 
 }

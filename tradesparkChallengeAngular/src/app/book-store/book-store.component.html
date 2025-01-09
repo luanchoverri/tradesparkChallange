@@ -1,5 +1,15 @@
 <div class="background-image">
     <h1> Book Store </h1>
+
+    <div class="filter-section">
+      <i class="fas fa-search search-icon"></i>
+      <input
+        type="text"
+        placeholder="Search by Title, Author or Category"
+        (input)="applyFilter($event)"
+      />
+    </div>
+
     <div class="book-list">
         <div>
             <table>
@@ -11,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let book of books">
+                    <tr *ngFor="let book of filteredBooks">
                         <td>{{ book["title"] }}</td>
                         <td>{{ book["author"]["name"] }}</td>
                         <td>{{ categoriesToString(book['categories']) }}</td>
