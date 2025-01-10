@@ -32,3 +32,34 @@ class BookSerializer(serializers.ModelSerializer):
             category = Category.objects.get(**category_data)
             book.categories.add(category)
         return book
+
+    def update(self, instance, validated_data):
+        author_data = validated_data.pop('author')
+        categories_data = validated_data.pop('categories')
+
+        # Actualizar datos del autor
+        author_instance, created = Author.objects.get_or_create(**author_data)
+        instance.author = author_instance
+
+        # Actualizar datos del libro
+        instance.title = validated_data.get('title', instance.title)
+        instance.save()
+
+        # Actualizar categorías
+        instance.categories.clear()
+        for category_data in categories_data:
+            category_instance, created = Category.objects.get_or_create(**category_data)
+            instance.categories.add(category_instance)
+
+        return instance
+    def remove_category(self, book, category_id):
+        category = Category.objects.filter(id=category_id).first()
+        if not category:
+            raise serializers.ValidationError({"detail": "La categoría no existe."})
+
+        print("categorias contador=", book.categories.count())
+
+        if book.categories.count() <= 1:
+            raise serializers.ValidationError({"detail": "El libro debe tener al menos una categoría."})
+
+        book.categories.remove(category)
