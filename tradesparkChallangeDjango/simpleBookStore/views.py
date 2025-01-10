@@ -24,11 +24,15 @@ class BookViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['DELETE'])
     def remove_category(self, request, pk=None, category_id=None ):
         book = self.get_object()
-        category = Category.objects.get(id=category_id)
 
+        # si la categoría existe globalmente
+        if not Category.objects.filter(id=category_id).exists():
+            return Response({"error": "The category does not exist."}, status=404)
 
-        if book.categories.count() > 1:
-            book.categories.remove(category)
+        # si la categoría está asociada al libro
+        if not book.categories.filter(id=category_id).exists():
+            return Response( {"error": "This category is not associated with the book."}, status=400)
 
-            return Response({"detail": "Category removed successfully."}, status=204)
-        return Response({"error": "Error"}, status=404)
+        category = book.categories.get(id=category_id)
+        book.categories.remove(category)
+        return Response({"detail": "Category removed successfully."}, status=200)

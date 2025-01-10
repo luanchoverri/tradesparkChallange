@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BookStoreService} from '../book-store.service';
+import {timeout} from "rxjs/operators";
 
 @Component({
   selector: 'app-book-store',
@@ -10,6 +11,7 @@ export class BookStoreComponent implements OnInit {
 
   books: any[] = [];
   filteredBooks: any[] = [];
+
 
 
   constructor(private bookStoreService: BookStoreService) {
@@ -55,12 +57,11 @@ export class BookStoreComponent implements OnInit {
     const confirmation = window.confirm(`Are you sure you want to delete the category?`);
     if (confirmation) {
       this.bookStoreService.deleteCategory(bookId, categoryId).subscribe(
-        () => {
-          console.log(`Categoría ${categoryId} eliminada del libro ${bookId}`);
+        (response: any) => {
           this.getBooks();
         },
         (error) => {
-          console.error('Error al eliminar la categoría:', error);
+          window.alert(`An unexpected error occurred`);
         }
       );
     }

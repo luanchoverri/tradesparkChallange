@@ -52,14 +52,4 @@ class BookSerializer(serializers.ModelSerializer):
             instance.categories.add(category_instance)
 
         return instance
-    def remove_category(self, book, category_id):
-        category = Category.objects.filter(id=category_id).first()
-        if not category:
-            raise serializers.ValidationError({"detail": "La categoría no existe."})
 
-        print("categorias contador=", book.categories.count())
-
-        if book.categories.count() <= 1:
-            raise serializers.ValidationError({"detail": "El libro debe tener al menos una categoría."})
-
-        book.categories.remove(category)
