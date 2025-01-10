@@ -95,19 +95,4 @@ h1 {
   gap: 8px;
 }
 
-.flat-button {
-  margin: 10px 0;
-  padding: 12px 20px;
-  background-color: #007BFF;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease-in;
-}
-
-.flat-button:hover {background-color: #0068d9
-}
 
