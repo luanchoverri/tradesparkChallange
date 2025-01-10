@@ -10,7 +10,7 @@ export class BookStoreComponent implements OnInit {
 
   books: any[] = [];
   filteredBooks: any[] = [];
-  filterQuery: string = '';
+
 
   constructor(private bookStoreService: BookStoreService) {
   }

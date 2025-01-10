@@ -1,28 +1,29 @@
 .category-chip {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  background-color: #f1f1f1;
+  justify-content: center;
+  background-color: #f3f3f3;
   border-radius: 16px;
-  padding: 5px 10px;
-  margin: 2px;
+  padding: 6px 12px;
   font-size: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+
 .category-chip:hover {
 
-  background-color: rgba(208, 164, 164, 0.59);
+  background-color: rgba(238, 157, 157, 0.97);
 }
 
 .category-name {
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .delete-category {
   background: none;
   border: none;
   color: #a0a0a0;
-  font-size: 0.8rem;
+  font-size: 1rem;
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -31,10 +32,7 @@
 }
 
 .delete-category:hover {
-  color: #9d0000;
+  color: #880202;
 
 }
 
-.delete-category:focus {
-
-}

@@ -2,9 +2,10 @@
     <h1> Book Store </h1>
 
     <div class="filter-section">
-      <i class="fas fa-search search-icon"></i>
+      <i class="fa fa-search search-icon"></i>
       <input
         type="text"
+        id="filter-input"
         placeholder="Search by Title, Author or Category"
         (input)="applyFilter($event)"
       />
@@ -25,8 +26,8 @@
                         <td>{{ book["title"] }}</td>
                         <td>{{ book["author"]["name"] }}</td>
                         <td>
-                            <div *ngFor="let category of book.categories">
-                              <app-category-chip
+                            <div class="chips-container" >
+                              <app-category-chip  *ngFor="let category of book.categories" class="chip"
                                 [category]=category
                                 [bookId]="book.id"
                                 (deleteCategory)="deleteCategoryFromBook($event)">
