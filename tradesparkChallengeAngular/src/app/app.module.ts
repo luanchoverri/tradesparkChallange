@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import { CategoryChipComponent } from './category-chip/category-chip.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,6 @@ import { CategoryChipComponent } from './category-chip/category-chip.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

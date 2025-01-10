@@ -19,12 +19,12 @@ h1 {
 .filter-section {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   padding: 12px 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .filter-section:focus-within {
@@ -42,13 +42,13 @@ h1 {
   outline: none;
   width: 100%;
   font-size: 1rem;
-  color: #333;
+  color: #131313;
   background: transparent;
 
 }
 
 .filter-section input::placeholder {
-  color: #999;
+  color: #6e6e6e;
 }
 
 
@@ -95,4 +95,19 @@ h1 {
   gap: 8px;
 }
 
+.flat-button {
+  margin: 10px 0;
+  padding: 12px 20px;
+  background-color: #007BFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+
+.flat-button:hover {background-color: #0068d9
+}
 
