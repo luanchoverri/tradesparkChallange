@@ -11,4 +11,9 @@ export class BookStoreService {
   getBooks() {
     return this.client.get('http://localhost:8000/bookStore/books/');
   }
+
+  deleteCategory(bookId: number, categoryId: number) {
+    return this.client.delete(`http://localhost:8000/bookStore/books/${bookId}/remove_category/${categoryId}/`);
+
+  }
 }

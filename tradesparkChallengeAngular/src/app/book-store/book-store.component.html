@@ -24,7 +24,15 @@
                     <tr *ngFor="let book of filteredBooks">
                         <td>{{ book["title"] }}</td>
                         <td>{{ book["author"]["name"] }}</td>
-                        <td>{{ categoriesToString(book['categories']) }}</td>
+                        <td>
+                            <div *ngFor="let category of book.categories">
+                              <app-category-chip
+                                [category]=category
+                                [bookId]="book.id"
+                                (deleteCategory)="deleteCategoryFromBook($event)">
+                              </app-category-chip>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

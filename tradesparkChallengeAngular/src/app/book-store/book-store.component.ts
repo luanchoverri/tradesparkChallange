@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BookStoreService } from '../book-store.service';
+import {Component, OnInit} from '@angular/core';
+import {BookStoreService} from '../book-store.service';
 
 @Component({
   selector: 'app-book-store',
@@ -12,7 +12,8 @@ export class BookStoreComponent implements OnInit {
   filteredBooks: any[] = [];
   filterQuery: string = '';
 
-  constructor(private bookStoreService: BookStoreService) { }
+  constructor(private bookStoreService: BookStoreService) {
+  }
 
   ngOnInit(): void {
     this.getBooks();
@@ -29,7 +30,7 @@ export class BookStoreComponent implements OnInit {
     return categoriesString;
   }
 
- applyFilter(event: Event): void {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.toLowerCase();
     this.filteredBooks = this.books.filter(book =>
       book.title.toLowerCase().includes(filterValue) ||
@@ -46,6 +47,19 @@ export class BookStoreComponent implements OnInit {
       this.books = data;
       this.filteredBooks = data;
     });
+  }
+
+  deleteCategoryFromBook(event: { bookId: number, categoryId: number }) {
+    const {bookId, categoryId} = event;
+    this.bookStoreService.deleteCategory(bookId, categoryId).subscribe(
+      () => {
+        console.log(`Categoría ${categoryId} eliminada del libro ${bookId}`);
+        this.getBooks();
+      },
+      (error) => {
+        console.error('Error al eliminar la categoría:', error);
+      }
+    );
   }
 
 }

@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookStoreComponent } from './book-store/book-store.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { BookFilterComponent } from './book-filter/book-filter.component';
 import {FormsModule} from '@angular/forms';
+import { CategoryChipComponent } from './category-chip/category-chip.component';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import {FormsModule} from '@angular/forms';
     AppComponent,
     BookStoreComponent,
     MainPageComponent,
-    BookFilterComponent
+    CategoryChipComponent
   ],
   imports: [
     BrowserModule,

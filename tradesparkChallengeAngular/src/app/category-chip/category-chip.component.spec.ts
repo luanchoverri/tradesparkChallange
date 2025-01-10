@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookFilterComponent } from './book-filter.component';
+import { CategoryChipComponent } from './category-chip.component';
 
-describe('BookFilterComponent', () => {
-  let component: BookFilterComponent;
-  let fixture: ComponentFixture<BookFilterComponent>;
+describe('CategoryChipComponent', () => {
+  let component: CategoryChipComponent;
+  let fixture: ComponentFixture<CategoryChipComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookFilterComponent ]
+      declarations: [ CategoryChipComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookFilterComponent);
+    fixture = TestBed.createComponent(CategoryChipComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
