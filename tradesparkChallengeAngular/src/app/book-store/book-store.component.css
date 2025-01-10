@@ -52,7 +52,6 @@ h1 {
 }
 
 
-
 .book-list {
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent white for legibility */
     border-radius: 8px;
@@ -94,5 +93,3 @@ h1 {
   flex-wrap: wrap;
   gap: 8px;
 }
-
-
