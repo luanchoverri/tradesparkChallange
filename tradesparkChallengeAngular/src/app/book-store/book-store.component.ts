@@ -51,15 +51,19 @@ export class BookStoreComponent implements OnInit {
 
   deleteCategoryFromBook(event: { bookId: number, categoryId: number }) {
     const {bookId, categoryId} = event;
-    this.bookStoreService.deleteCategory(bookId, categoryId).subscribe(
-      () => {
-        console.log(`Categoría ${categoryId} eliminada del libro ${bookId}`);
-        this.getBooks();
-      },
-      (error) => {
-        console.error('Error al eliminar la categoría:', error);
-      }
-    );
+
+    const confirmation = window.confirm(`Are you sure you want to delete the category?`);
+    if (confirmation) {
+      this.bookStoreService.deleteCategory(bookId, categoryId).subscribe(
+        () => {
+          console.log(`Categoría ${categoryId} eliminada del libro ${bookId}`);
+          this.getBooks();
+        },
+        (error) => {
+          console.error('Error al eliminar la categoría:', error);
+        }
+      );
+    }
   }
 
 }
