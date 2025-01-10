@@ -28,4 +28,13 @@ export class BookStoreService {
       );
 
   }
+
+
+  addBook(bookData: any){
+
+    console.log('Enviando datos al backend:', bookData);
+    return this.client.post('http://localhost:8000/bookStore/books/', bookData);
+  }
+
+
 }

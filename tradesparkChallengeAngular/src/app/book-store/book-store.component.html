@@ -11,9 +11,15 @@
       />
     </div>
 
-    <button class="flat-button"> Add Book </button>
+  <button class="flat-button" (click)="openAddBookDialog()">Add Book</button>
 
-    <div class="book-list">
+  <app-add-book-form
+    [isOpen]="isModalOpen"
+    (isClose)="closeAddBookDialog()"
+    (bookAdded)="getBooks()"
+  ></app-add-book-form>
+
+  <div class="book-list">
         <div>
             <table>
                 <thead>

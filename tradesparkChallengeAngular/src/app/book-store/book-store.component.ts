@@ -11,6 +11,8 @@ export class BookStoreComponent implements OnInit {
 
   books: any[] = [];
   filteredBooks: any[] = [];
+  isModalOpen = false; // Estado del modal
+
 
 
 
@@ -66,5 +68,15 @@ export class BookStoreComponent implements OnInit {
       );
     }
   }
+
+  openAddBookDialog(): void {
+    this.isModalOpen = true; // Abrir el modal
+  }
+
+  closeAddBookDialog(): void {
+    this.isModalOpen = false; // Cerrar el modal
+  }
+
+
 
 }
