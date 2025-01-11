@@ -45,7 +45,7 @@
                               <app-category-chip  *ngFor="let category of book.categories" class="chip"
                                 [category]=category
                                 [bookId]="book.id"
-                                (deleteCategory)="deleteCategoryFromBook($event)">
+                                (deleteCategory)="deleteCategoryBook($event)">
                               </app-category-chip>
                             </div>
                         </td>

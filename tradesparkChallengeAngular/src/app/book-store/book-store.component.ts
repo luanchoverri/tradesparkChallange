@@ -11,7 +11,7 @@ export class BookStoreComponent implements OnInit {
 
   books: any[] = [];
   filteredBooks: any[] = [];
-  isModalOpen = false; // Estado del modal
+  isModalOpen = false;
 
   constructor(private bookStoreService: BookStoreService) {
   }
@@ -50,7 +50,7 @@ export class BookStoreComponent implements OnInit {
     });
   }
 
-  deleteCategoryFromBook(event: { bookId: number, categoryId: number }) {
+  deleteCategoryBook(event: { bookId: number, categoryId: number }) {
     const {bookId, categoryId} = event;
 
     const confirmation = window.confirm(`Are you sure you want to delete the category?`);
