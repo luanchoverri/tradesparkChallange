@@ -70,7 +70,7 @@ Me llevó un poquito darle estilos a esta parte aunque con angular material hubi
 
 ![image](https://github.com/user-attachments/assets/491a292c-e905-4bf0-9076-5749369a0925)
 
-El borrado es muy simple y no me costaba nada implementarlo, sigue una lógica parecida a la de antes.. es un botón que está en la tabla del BookStore y al clickearlo llama al método "deleteBook" pasandole el *book.id*. El metodo del componente, emite una alerta-mensaje como los demás para confirmar el borrado y llama al servicio en caso de confirmacion. El servicio no hace más que hacer la solicitud HTTP al backend
+El borrado es muy simple y no me costaba nada implementarlo, sigue una lógica parecida a la de antes.. es un botón que está en la tabla del BookStore y al clickearlo llama al método "deleteBook" pasandole el *book.id*. El metodo del componente, emite una alerta-mensaje como los demás para confirmar el borrado y llama al servicio en caso de confirmacion. El servicio no hace más que hacer la solicitud HTTP al backend sin implementar la operación ya que Django la genera automaticamente al usar ModelViewSet, lo cual me parece fantástico.
 
 ## Notas
 
