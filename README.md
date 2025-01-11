@@ -17,3 +17,37 @@ Docker and docker-compose. for installation instructions see [here](https://docs
 4. Your has to see the following screen:
 ![example image](images/main_screen.png)
 
+
+## Especificaciones de la entrega
+
+### Primer punto (Angular, Front-side):
+- Construir un filtro sobre la tabla en la sección "Book store", el cual sea capaz de filtrar por título, autor o categoría.
+
+  
+
+### Segundo punto (Django, Back-side):
+- Dado el título de un libro y el nombre de una categoría, implementar la eliminación de esa categoría para el libro asociado.
+
+### Tercer punto (Opcional):
+- Implementar un botón en la sección book store que permite eliminar una categoría perteneciente a un libro. Este botón, al ser clickeado, deberá interactuar con el backend, el cual ejecutará la lógica implementada en el segundo punto para hacer efectiva la eliminación.
+
+### Funcionalidad Adicional 
+
+![image](https://github.com/user-attachments/assets/ecf20107-8887-4463-ba37-2a2a3f59889c)
+
+
+![image](https://github.com/user-attachments/assets/8822331a-3473-4f59-8c4c-0a7d0c6aa85c)
+
+
+![image](https://github.com/user-attachments/assets/10fdfa19-8ed0-4738-a798-b9ce4d0f1049)
+
+
+![image](https://github.com/user-attachments/assets/80b6d915-f9e5-44a0-acc5-7b30ca51f48e)
+
+
+
+![image](https://github.com/user-attachments/assets/491a292c-e905-4bf0-9076-5749369a0925)
+
+## Notas
+
+
