@@ -1,9 +1,6 @@
 <div class="background-image">
     <h1> Book Store </h1>
 
-
-
-
     <div class="filter-section">
       <i class="fa fa-search search-icon"></i>
       <input
@@ -14,12 +11,21 @@
       />
     </div>
 
+  <button class="flat-button" (click)="openAddBookDialog()">Add Book</button>
 
-    <div class="book-list">
+  <app-add-book-form
+    [isOpen]="isModalOpen"
+    (isClose)="closeAddBookDialog()"
+    (bookAdded)="getBooks()"
+  ></app-add-book-form>
+
+  <div class="book-list">
+
         <div>
             <table>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Book Title</th>
                         <th>Author</th>
                         <th>Category</th>
@@ -27,6 +33,11 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let book of filteredBooks">
+                        <td class="action-cell">
+                          <button  class="delete-button" (click)="deleteBook(book.id)">
+                            <i class="fa fa-minus-square" aria-hidden="true"></i>
+                          </button>
+                        </td>
                         <td>{{ book["title"] }}</td>
                         <td>{{ book["author"]["name"] }}</td>
                         <td>

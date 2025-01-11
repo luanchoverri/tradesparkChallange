@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookStoreComponent } from './book-store/book-store.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CategoryChipComponent } from './category-chip/category-chip.component';
+import { AddBookFormComponent } from './add-book-form/add-book-form.component';
 
 
 
@@ -16,13 +17,15 @@ import { CategoryChipComponent } from './category-chip/category-chip.component';
     AppComponent,
     BookStoreComponent,
     MainPageComponent,
-    CategoryChipComponent
+    CategoryChipComponent,
+    AddBookFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
