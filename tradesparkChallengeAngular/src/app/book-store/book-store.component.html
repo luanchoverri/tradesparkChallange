@@ -33,7 +33,7 @@
                 <tbody>
                     <tr *ngFor="let book of filteredBooks">
                         <td class="action-cell">
-                          <button  class="delete-button" (click)="onDeleteBook(book.id)">
+                          <button  class="delete-button" (click)="deleteBook(book.id)">
                             <i class="fa fa-minus-square" aria-hidden="true"></i>
                           </button>
                         </td>

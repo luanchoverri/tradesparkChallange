@@ -13,9 +13,6 @@ export class BookStoreComponent implements OnInit {
   filteredBooks: any[] = [];
   isModalOpen = false; // Estado del modal
 
-
-
-
   constructor(private bookStoreService: BookStoreService) {
   }
 
@@ -63,18 +60,32 @@ export class BookStoreComponent implements OnInit {
           this.getBooks();
         },
         (error) => {
-          window.alert(`An unexpected error occurred`);
+          alert(`An unexpected error occurred`);
+        }
+      );
+    }
+  }
+
+  deleteBook( bookId: number) {
+    const confirmation = window.confirm(`Are you sure you want to delete the book?`);
+    if (confirmation) {
+      this.bookStoreService.deleteBook(bookId).subscribe(
+        (response: any) => {
+          this.getBooks();
+        },
+        (error) => {
+          alert(`An unexpected error occurred`);
         }
       );
     }
   }
 
   openAddBookDialog(): void {
-    this.isModalOpen = true; // Abrir el modal
+    this.isModalOpen = true;
   }
 
   closeAddBookDialog(): void {
-    this.isModalOpen = false; // Cerrar el modal
+    this.isModalOpen = false;
   }
 
 
